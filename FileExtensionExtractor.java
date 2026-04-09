@@ -1,21 +1,14 @@
-import java.util.Scanner;
-
 public class FileExtensionExtractor {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        String fileName = "report.pdf";
+        int lastDot = fileName.lastIndexOf('.');
         
-        System.out.print("Enter file name: ");
-        String fileName = sc.nextLine();
-        
-        int lastDotIndex = fileName.lastIndexOf('.');
-        
-        if (lastDotIndex > 0 && lastDotIndex < fileName.length() - 1) {
-            String extension = fileName.substring(lastDotIndex + 1);
-            System.out.println("File extension: " + extension);
+        if (lastDot > 0) {
+            String extension = fileName.substring(lastDot + 1);
+            System.out.println("File Name: " + fileName);
+            System.out.println("Extension: " + extension);
         } else {
-            System.out.println("No valid extension found");
+            System.out.println("No extension found");
         }
-        
-        sc.close();
     }
 }

@@ -1,21 +1,21 @@
-import java.util.Scanner;
-
 public class StudentNameComparison {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        String name1 = "Alice";
+        String name2 = "alice";
         
-        System.out.print("Enter first name: ");
-        String name1 = sc.nextLine();
+        System.out.println("Name 1: " + name1);
+        System.out.println("Name 2: " + name2);
         
-        System.out.print("Enter second name: ");
-        String name2 = sc.nextLine();
+        if (name1.equals(name2)) {
+            System.out.println("Names are equal (case-sensitive)");
+        } else {
+            System.out.println("Names are not equal (case-sensitive)");
+        }
         
-        boolean caseSensitive = name1.equals(name2);
-        boolean caseInsensitive = name1.equalsIgnoreCase(name2);
-        
-        System.out.println("Case-sensitive comparison (equals): " + caseSensitive);
-        System.out.println("Case-insensitive comparison (equalsIgnoreCase): " + caseInsensitive);
-        
-        sc.close();
+        if (name1.equalsIgnoreCase(name2)) {
+            System.out.println("Names are equal (case-insensitive)");
+        } else {
+            System.out.println("Names are not equal (case-insensitive)");
+        }
     }
 }
